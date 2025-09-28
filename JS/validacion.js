@@ -27,20 +27,20 @@ document.addEventListener("DOMContentLoaded", ()=>{
         title.textContent = data.titulo;
         header.appendChild(title);
         const subtitle = document.createElement("H2");
-        subtitle.textContent = data.codigo
+        subtitle.textContent = data.codigo;
         header.appendChild(subtitle);
         container.appendChild(header);
-        // Aqui generar los bloques
+        // Generar los bloques
         data.plan.forEach(
             (bloque)=>{
                 container.appendChild(createBlock(bloque));
             }
-         );
+        );
         const rootContainer = document.getElementById('root');
         rootContainer.appendChild(container);
     }
 
-    function createBlock( blockData) {
+    function createBlock(blockData) {
         const blockContainer = document.createElement("DIV");
         blockContainer.classList.add("plan-block");
         const blockLabel = document.createElement("DIV");
@@ -49,23 +49,24 @@ document.addEventListener("DOMContentLoaded", ()=>{
         blockContainer.appendChild(blockLabel);
         const blockClasses = document.createElement("DIV");
         blockClasses.classList.add("plan-block-classes");
-        //Agragar las asignaturas
+
         blockData.asignaturas.forEach(
             (asignatura)=>{
                 const asignaturaContainer = document.createElement("DIV");
-                asignaturaContainer.classList.add("asignatura")
+                asignaturaContainer.classList.add("asignatura");
                 const asignaturaLabel = document.createElement("DIV");
                 asignaturaLabel.textContent = `(${asignatura.codigo}) ${asignatura.descripcion}`;
                 const asignaturaCreditos = document.createElement("DIV");
                 asignaturaCreditos.textContent = `Créditos: ${asignatura.creditos}`;
                 asignaturaContainer.appendChild(asignaturaLabel);
                 asignaturaContainer.appendChild(asignaturaCreditos);
-                //
+
                 planNodeTree[asignatura.codigo] = {
-                    asignatura:asignaturaContainer,
+                    asignatura: asignaturaContainer,
                     requisitos: [],
                     apertura: [],
                 };
+
                 asignatura.requisitos.forEach(
                     (requisito)=>{
                         if(planNodeTree[requisito]){
@@ -75,37 +76,41 @@ document.addEventListener("DOMContentLoaded", ()=>{
                             console.warn(`Requisito "${requisito}" aún no existe cuando se procesó "${asignatura.codigo}"`);
                         }
                     }
-                );              
-                asignaturaContainer.addEventListener("mouseenter", (e)=>{
-                    planNodeTree[asignatura.codigo].requisitos.forEach(
-                        (nodoRequisito)=>{
-                            nodoRequisito.classList.add("requisito");
-                        }
-                    )
-                    planNodeTree[asignatura.codigo].apertura.forEach(
-                        (nodoRequisito)=>{
-                            nodoRequisito.classList.add("apertura");
-                        }
-                    )
-                    planNodeTree[asignatura.codigo].asignatura.classList.add("active");
-                });
+                );
 
-                asignaturaContainer.addEventListener("mouseleave", (e)=>{
+                // Funciones de activación/desactivación del hover/touch
+                function activarHover(){
                     planNodeTree[asignatura.codigo].requisitos.forEach(
-                        (nodoRequisito)=>{
-                            nodoRequisito.classList.remove("requisito");
-                        }
-                    )
+                        nodoRequisito => nodoRequisito.classList.add("requisito")
+                    );
                     planNodeTree[asignatura.codigo].apertura.forEach(
-                        (nodoRequisito)=>{
-                            nodoRequisito.classList.remove("apertura");
-                        }
-                    )
+                        nodoRequisito => nodoRequisito.classList.add("apertura")
+                    );
+                    planNodeTree[asignatura.codigo].asignatura.classList.add("active");
+                }
+
+                function desactivarHover(){
+                    planNodeTree[asignatura.codigo].requisitos.forEach(
+                        nodoRequisito => nodoRequisito.classList.remove("requisito")
+                    );
+                    planNodeTree[asignatura.codigo].apertura.forEach(
+                        nodoRequisito => nodoRequisito.classList.remove("apertura")
+                    );
                     planNodeTree[asignatura.codigo].asignatura.classList.remove("active");
-                });
+                }
+
+                // Listeners para PC (hover)
+                asignaturaContainer.addEventListener("mouseenter", activarHover);
+                asignaturaContainer.addEventListener("mouseleave", desactivarHover);
+
+                // Listeners para móvil (touch)
+                asignaturaContainer.addEventListener("touchstart", activarHover);
+                asignaturaContainer.addEventListener("touchend", desactivarHover);
+
                 blockClasses.appendChild(asignaturaContainer);
             }
-        )
+        );
+
         blockContainer.appendChild(blockClasses);
         return blockContainer;
     }
