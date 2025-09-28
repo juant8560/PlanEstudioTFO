@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", ()=>{
     const jsonUrl = './Clases.json';
     const planNodeTree = {};
+    let asignaturaActivaMobile = null; // Variable para móvil
+
     fetch(jsonUrl)
         .then((response)=>{
             if(response.status === 200) {
@@ -54,6 +56,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
             (asignatura)=>{
                 const asignaturaContainer = document.createElement("DIV");
                 asignaturaContainer.classList.add("asignatura");
+                asignaturaContainer.dataset.codigo = asignatura.codigo; // Para móvil
+
                 const asignaturaLabel = document.createElement("DIV");
                 asignaturaLabel.textContent = `(${asignatura.codigo}) ${asignatura.descripcion}`;
                 const asignaturaCreditos = document.createElement("DIV");
@@ -103,9 +107,20 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 asignaturaContainer.addEventListener("mouseenter", activarHover);
                 asignaturaContainer.addEventListener("mouseleave", desactivarHover);
 
-                // Listeners para móvil (touch)
-                asignaturaContainer.addEventListener("touchstart", activarHover);
-                asignaturaContainer.addEventListener("touchend", desactivarHover);
+                // Listener para móvil (toggle al tocar)
+                asignaturaContainer.addEventListener("touchstart", (e)=>{
+                    e.preventDefault(); // evita scroll accidental
+                    // Desactivar la asignatura activa anterior
+                    if(asignaturaActivaMobile && asignaturaActivaMobile !== asignaturaContainer){
+                        const codigoPrev = asignaturaActivaMobile.dataset.codigo;
+                        planNodeTree[codigoPrev].requisitos.forEach(nodo => nodo.classList.remove("requisito"));
+                        planNodeTree[codigoPrev].apertura.forEach(nodo => nodo.classList.remove("apertura"));
+                        planNodeTree[codigoPrev].asignatura.classList.remove("active");
+                    }
+                    // Activar la nueva
+                    activarHover();
+                    asignaturaActivaMobile = asignaturaContainer;
+                });
 
                 blockClasses.appendChild(asignaturaContainer);
             }
