@@ -1,0 +1,432 @@
+{
+    "titulo": "Flujograma de la Carrera de Terapia Física y Ocupacional",
+    "codigo": "CEUTEC",
+    "plan": [
+        {
+            "bloque": "Semestre I Periodo I",
+            "key": 1,
+            "asignaturas": [
+                {
+                    "codigo":"MAT101",
+                    "descripcion": "Introducción al Algebra",
+                    "creditos": 4,
+                    "requisitos": []
+                },
+                {
+                    "codigo":"FBB101",
+                    "descripcion": "Química para Ciencias de la Salud",
+                    "creditos": 4,
+                    "requisitos": []
+                },
+                {
+                    "codigo":"TFO103",
+                    "descripcion": "Introducción y Fundamentos de TFO",
+                    "creditos": 3,
+                    "requisitos": []
+                }
+            ]
+        },
+        {
+            "bloque": "Semestre I Periodo II",
+            "key": 2,
+            "asignaturas": [
+                {
+                    "codigo":"MAT102",
+                    "descripcion": "Algebra",
+                    "creditos": 4,
+                    "requisitos": ["MAT101"]
+                },
+                {
+                    "codigo":"MDE102",
+                    "descripcion": "Procesos Biologicos I",
+                    "creditos": 5,
+                    "requisitos": ["FBB101"]
+                },
+                {
+                    "codigo":"ESP103",
+                    "descripcion": "Comunicación Oral y Escrita",
+                    "creditos": 4,
+                    "requisitos": []
+                },
+                {
+                    "codigo":"EIE1",
+                    "descripcion": "Electiva de Idioma Extranjero I",
+                    "creditos": 3,
+                    "requisitos": []
+                }
+            ]
+        },
+        {
+            "bloque": "Semestre II Periodo I",
+            "key": 3,
+            "asignaturas": [
+                {
+                    "codigo":"TFO102",
+                    "descripcion": "Biofísica",
+                    "creditos": 4,
+                    "requisitos": ["MAT102"]
+                },
+                {
+                    "codigo":"MDE105",
+                    "descripcion": "Procesos Biologicos II",
+                    "creditos": 5,
+                    "requisitos": ["MDE102"]
+                },
+                {
+                    "codigo":"TFO104",
+                    "descripcion": "Introducción a las Modalidades Terapuéticas",
+                    "creditos": 3,
+                    "requisitos": ["TFO103"]
+                },
+                {
+                    "codigo":"EIE2",
+                    "descripcion": "Electiva de Idioma Extranjero II",
+                    "creditos": 3,
+                    "requisitos": ["EIE1"]
+                }
+            ]
+        },
+        {
+            "bloque": "Semestre II Periodo II",
+            "key": 4,
+            "asignaturas": [
+                {
+                    "codigo":"MDE107",
+                    "descripcion": "Morfología General",
+                    "creditos": 5,
+                    "requisitos": ["MDE105"]
+                },
+                {
+                    "codigo":"MDE208",
+                    "descripcion": "Fisiología General",
+                    "creditos": 4,
+                    "requisitos": ["MDE105"]
+                },
+                {
+                    "codigo":"LCC104",
+                    "descripcion": "Ofimática Avanzada",
+                    "creditos": 2,
+                    "requisitos": []
+                },
+                {
+                    "codigo":"EIE3",
+                    "descripcion": "Electiva de Idioma Extranjero III",
+                    "creditos": 3,
+                    "requisitos": ["EIE2"]
+                }
+            ]
+        },
+        {
+            "bloque": "Semestre III Periodo I",
+            "key": 5,
+            "asignaturas": [
+                {
+                    "codigo":"FBB201",
+                    "descripcion": "Agresión y Defensa",
+                    "creditos": 4,
+                    "requisitos": ["MDE107","MDE108"]
+                },
+                {
+                    "codigo":"MDE207",
+                    "descripcion": "Fisiopatalogía General",
+                    "creditos": 4,
+                    "requisitos": ["MDE108","MDE107"]
+                },
+                {
+                    "codigo":"TFO309",
+                    "descripcion": "Biomécanica",
+                    "creditos": 4,
+                    "requisitos": ["MDE107"]
+                },
+                {
+                    "codigo":"EIE4",
+                    "descripcion": "Electiva de Idioma Extranjero IV",
+                    "creditos": 3,
+                    "requisitos": ["EIE3"]
+                }
+            ]
+        },
+        {
+            "bloque": "Semestre III Periodo II",
+            "key": 6,
+            "asignaturas": [
+                {
+                    "codigo":"MDE204",
+                    "descripcion": "Bioestadística",
+                    "creditos": 3,
+                    "requisitos": ["TFO102","LCC104"]
+                },
+                {
+                    "codigo":"TFO313",
+                    "descripcion": "Ética y Discapacidad",
+                    "creditos": 3,
+                    "requisitos": []
+                },
+                {
+                    "codigo":"TFO205",
+                    "descripcion": "Desarrollo Psicomotor",
+                    "creditos": 4,
+                    "requisitos": ["TFO104","MDE207","FBB201"]
+                }
+            ]
+        },
+        {
+            "bloque": "Semestre IV Periodo I",
+            "key": 7,
+            "asignaturas": [
+                {
+                    "codigo":"TFO301",
+                    "descripcion": "Sistema Circulatorio y Respiratorio",
+                    "creditos": 3,
+                    "requisitos": ["TFO205"]
+                },
+                {
+                    "codigo":"TFO206",
+                    "descripcion": "Sistema Endocrino Gastrointestinal y Genitourinario",
+                    "creditos": 4,
+                    "requisitos": ["TFO205"]
+                },
+                {
+                    "codigo":"TFO312",
+                    "descripcion": "Cinesioterapia",
+                    "creditos": 4,
+                    "requisitos": ["TFO309"]
+                }
+            ]
+        },
+        {
+            "bloque": "Semestre IV Periodo II",
+            "key": 8,
+            "asignaturas": [
+                {
+                    "codigo":"TFO207",
+                    "descripcion": "Sistema Nervioso y Tegumentario",
+                    "creditos": 4,
+                    "requisitos": ["TFO301", "TFO206"]
+                },
+                {
+                    "codigo":"TFO208",
+                    "descripcion": "Sistema Osteomioarticular",
+                    "creditos": 4,
+                    "requisitos": ["TFO206","TF0301"]
+                },
+                {
+                    "codigo":"TFO410",
+                    "descripcion": "Educación Especial Inclusiva",
+                    "creditos": 4,
+                    "requisitos": ["TFO313"]
+                }
+            ]
+        },
+        {
+            "bloque": "Semestre V Periodo I",
+            "key": 9,
+            "asignaturas": [
+                {
+                    "codigo":"MDE208",
+                    "descripcion": "Metodología de Investigación",
+                    "creditos": 3,
+                    "requisitos": ["MDE204"]
+                },
+                {
+                    "codigo":"TFO314",
+                    "descripcion": "Estilo de Vida, Comportamiento y Discapacidad",
+                    "creditos": 4,
+                    "requisitos": ["TFO205","TFO410"]
+                },
+                {
+                    "codigo":"TFO315",
+                    "descripcion": "Evaluación y Diagnóstico en Terapia Física y Ocupacional",
+                    "creditos": 4,
+                    "requisitos": ["TFO207","TFO208"]
+                }
+            ]
+        },
+        {
+            "bloque": "Semestre V Periodo II",
+            "key": 10,
+            "asignaturas": [
+                {
+                    "codigo":"IND432",
+                    "descripcion": "Sistemas de Gestión de la Innovación y Tecnología",
+                    "creditos": 4,
+                    "requisitos": ["MDE208"]
+                },
+                {
+                    "codigo":"SOC101",
+                    "descripcion": "Sociología",
+                    "creditos": 3,
+                    "requisitos": []
+                },
+                {
+                    "codigo":"TFO405",
+                    "descripcion": "Control Estadístico de la Calidad",
+                    "creditos": 4,
+                    "requisitos": ["Medios Físicos I"]
+                },
+                {
+                    "codigo":"HIS101",
+                    "descripcion": "Historia de Honduras",
+                    "creditos": 3,
+                    "requisitos": []
+                }
+            ]
+        },
+        {
+            "bloque": "Sementre VI Periodo I",
+            "key": 11,
+            "asignaturas": [
+                {
+                    "codigo":"FIL101",
+                    "descripcion": "Filosofía",
+                    "creditos": 3,
+                    "requisitos": []
+                },
+                {
+                    "codigo":"TFO316",
+                    "descripcion": "Terapia Ocupacional I",
+                    "creditos": 3,
+                    "requisitos": ["TFO405"]
+                },
+                {
+                    "codigo":"TFO311",
+                    "descripcion": "Fisioterapia I",
+                    "creditos": 4,
+                    "requisitos": ["TFO405"]
+                }
+            ]
+        },
+        {
+            "bloque": "Sementre VI Periodo II",
+            "key": 12,
+            "asignaturas": [
+                {
+                    "codigo":"TFO409",
+                    "descripcion": "Medios Físicos II",
+                    "creditos": 4,
+                    "requisitos": ["TFO405"]
+                },
+                {
+                    "codigo":"TFO401",
+                    "descripcion": "Terapia Ocupacional II",
+                    "creditos": 4,
+                    "requisitos": ["TFO316"]
+                },
+                {
+                    "codigo":"TFO402",
+                    "descripcion": "Fisioterapia II",
+                    "creditos": 4,
+                    "requisitos": ["TFO311"]
+                }
+            ]
+        },
+        {
+            "bloque": "Sementre VII Periodo I",
+            "key": 13,
+            "asignaturas": [
+                {
+                    "codigo":"MDE212",
+                    "descripcion": "Generación de Empresas en Salud",
+                    "creditos": 3,
+                    "requisitos": ["IND432"]
+                },
+                {
+                    "codigo":"TFO403",
+                    "descripcion": "Ejercicio Terapéutico",
+                    "creditos": 4,
+                    "requisitos": ["TFO402"]
+                },
+                {
+                    "codigo":"TFO407",
+                    "descripcion": "Terapia Física y Ocupacional Infantil",
+                    "creditos": 4,
+                    "requisitos": ["TFO401", "TFO402"]
+                }
+            ]
+        },
+        {
+            "bloque": "Sementre VII Periodo II",
+            "key": 14,
+            "asignaturas": [
+                {
+                    "codigo":"TFO414",
+                    "descripcion": "Leyes, Derechos Humanos y Discapacidad",
+                    "creditos": 3,
+                    "requisitos": ["TFO314"]
+                },
+                {
+                    "codigo":"TFO203",
+                    "descripcion": "Rehabilitación Basada en la Comunidad",
+                    "creditos": 3,
+                    "requisitos": ["TFO401"]
+                },
+                {
+                    "codigo":"TFO408",
+                    "descripcion": "Terapia Física y Ocupacional en el Adulto",
+                    "creditos": 3,
+                    "requisitos": ["TFO403","TFO407"]
+                }
+            ]
+        },
+        {
+            "bloque": "Sementre VIII Periodo I",
+            "key": 15,
+            "asignaturas": [
+                {
+                    "codigo":"TFO404",
+                    "descripcion": "Órtesis y Prótesis",
+                    "creditos": 4,
+                    "requisitos": ["TFO203"]
+                },
+                {
+                    "codigo":"TFO415",
+                    "descripcion": "Rehabilitación Deportiva",
+                    "creditos": "",
+                    "requisitos": ["TFO203","TFO403"]
+                },
+                {
+                    "codigo":"TFO416",
+                    "descripcion": "Rehabilitación Geriátrica",
+                    "creditos": 4,
+                    "requisitos": ["TFO408"]
+                }
+            ]
+        },
+        {
+            "bloque": "Sementre VIII Periodo II",
+            "key": 16,
+            "asignaturas": [
+                {
+                    "codigo": "MDE304",
+                    "descripcion": "Gestión de Servicios en Salud",
+                    "creditos": 3,
+                    "requisitos": ["MDE212"]
+                },
+                {
+                    "codigo":"TFO417",
+                    "descripcion": "Rehabilitación Cardiopulmonar",
+                    "creditos": 4,
+                    "requisitos": ["TFO415"]
+                },
+                {
+                    "codigo":"TFO418",
+                    "descripcion": "Rehabilitación de Cuidados Críticos",
+                    "creditos": 4,
+                    "requisitos": ["TFO404", "TFO416"]
+                }
+            ]
+        },
+        {
+            "bloque": "Servicio Social",
+            "key": 18,
+            "asignaturas": [
+                {
+                    "codigo": "TFO503",
+                    "descripcion": "Servicio Social",
+                    "creditos": "",
+                    "requisitos": ["MDE304","TFO417","TFO418"]
+                }
+            ]
+        }
+    ]
+}
